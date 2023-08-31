@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bui Trong Nguyen</title>
+</head>
+<body>
+<canvas id="draw" width=200px" height="100px"></canvas>
+<script>
+//    cau 1
+//    Cho danh sách các điểm thi ở trong một mảng
+//    Hãy viết hàm tìm được điểm thi cao thứ 3 với đầu vào là một
+//    mảng điểm. (không dùng hàm có sẵn để sắp xếp). 25
+        arr([1, 3, 5, 7, 9, 2, 4, 6, 8])
+
+        function arr(a) {
+            let max = a[0];
+            for (let i = 0; i < a.length; i++) {
+                if (max < a[i]) {
+                    max = a[i];
+                }
+            }
+            let max11 = a.indexOf(max);
+            ax.splice(max11, 1);
+            let max2 = a[0];
+            for (let j = 0; j < a.length; j++) {
+                if (a[j] > max2) {
+                    max2 = a[j];
+                }
+            }
+            let max22 = a.indexOf(max2);
+            ax.splice(max22, 1);
+            let max3 = a[0];
+            for (let j = 0; j < a.length; j++) {
+                if (ax[j] > max3) {
+                    max3 = a[j];
+                }
+            }
+            console.log(max3)
+            return max3
+        }
+
+    //cau 2
+        // Viết hàm tryRemoveFromArray() nhận vào tham số là một
+        // mảng và một số nguyên index, trả về mảng ban đầu đã được
+        // loại bỏ phần tử tại vị trí index nếu index hợp lệ. Nếu index
+        // không hợp lệ, trả về mảng ban đầu.
+        // (không dùng hàm có sẵn để xóa mảng)
+
+        function tryRemoveFromArray(arr, index) {
+            if (index < arr.length && index >= 0) {
+                let newArr = [];
+                for (let i = 0; i < arr.length; i++) {
+                    if (i === index) {
+                    } else {
+                        newArr.push(arr[i]);
+                    }
+                }
+                console.log(newArr);
+            }
+            else {
+                console.log(arr);
+            }
+        }
+        tryRemoveFromArray([2, 5, 7, 9, 7], 9);
+
+
+    //cau 4
+    let canvas = document.getElementById("draw");
+    if (canvas.getContext)
+    {
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle='#000000';
+        ctx.fillRect(10, 10, 200, 100);
+    }
+
+</script>
+
+</body>
+</html>
